@@ -6,7 +6,7 @@
     ../../modules/system/graphics.nix
   ];
 
-  networking.hostName = "laptop";
+  networking.hostName = "nixos";
   time.timeZone = "Europe/Amsterdam";
 
   # Enable the GNOME Desktop Environment.

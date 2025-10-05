@@ -5,22 +5,15 @@
 
   hardware.opengl = {
     enable = true;
-
-    extraPackages = with pkgs; [
-      amdvlk
-      rocm-opencl-runtime
-    ];
-    extraPackages32 = with pkgs; [
-      driversi686Linux.amdvlk
-    ];
   };
 
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       mesa
-      mesa.drivers
-      mesa.vulkan-drivers
+      rocmPackages.clr.icd          # OpenCL runtime
+      rocmPackages.rocm-smi         # AMD GPU monitoring tool
     ];
   };
 
