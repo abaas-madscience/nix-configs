@@ -10,15 +10,21 @@
       gs = "git status";
       v = "nvim";
     };
-    initExtra = ''
+    
+    # DEPRECATED: initExtra = ''
+    # NEW OPTION:
+    initContent = ''
       export EDITOR=nvim
     '';
+    
     oh-my-zsh = {
       enable = true;
-      theme = "powerlevel10k/powerlevel10k";
+      # You can often use "powerlevel10k" directly here
+      theme = "powerlevel10k/powerlevel10k"; 
       plugins = [ "git" "z" "colored-man-pages" "sudo" ];
     };
   };
 
-  home.packages = with pkgs; [ zsh powerlevel10k ];
+  # Assuming you fixed the undefined variable issue by using 'zsh-powerlevel10k'
+  home.packages = with pkgs; [ zsh zsh-powerlevel10k ];
 }
