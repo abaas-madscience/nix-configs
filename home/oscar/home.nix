@@ -3,6 +3,7 @@
   imports = [
     ./apps/zsh.nix
     ./apps/tmux.nix
+    ./apps/zed-editor.nix
   ];
 
   home.username = "oscar";

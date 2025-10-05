@@ -10,21 +10,28 @@
       gs = "git status";
       v = "nvim";
     };
-    
-    # DEPRECATED: initExtra = ''
-    # NEW OPTION:
     initContent = ''
       export EDITOR=nvim
     '';
-    
-    oh-my-zsh = {
-      enable = true;
-      # You can often use "powerlevel10k" directly here
-      theme = "powerlevel10k/powerlevel10k"; 
-      plugins = [ "git" "z" "colored-man-pages" "sudo" ];
+  };
+
+  # Starship configuration
+  programs.starship = {
+    enable = true;
+    # Configure it declaratively!
+    settings = {
+      # Example settings to configure its appearance
+      format = "$all";
+      directory.truncation_length = 3;
+      git_branch.symbol = " ";
+      kubernetes.format = "[\\( $symbol$context in $cluster \\)]($style)";
+      kubernetes.symbol = "⎈ ";
     };
   };
 
-  # Assuming you fixed the undefined variable issue by using 'zsh-powerlevel10k'
-  home.packages = with pkgs; [ zsh zsh-powerlevel10k ];
+  # Use minimal packages, letting zsh modules handle their dependencies
+  home.packages = with pkgs; [ 
+    zsh 
+    # Add back the zsh plugins that you want (syntax-highlighting, autosuggestions are now dedicated modules)
+  ]; 
 }
