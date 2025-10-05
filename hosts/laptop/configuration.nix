@@ -25,7 +25,7 @@
     shell = pkgs.zsh;
   };
 
-  environment.systemPackages = with pkgs; [ vim git ];
+  environment.systemPackages = with pkgs; [ vim git gnome-terminal ];
   programs.zsh.enable = true;
 
   # This value determines the NixOS release from which the default
