@@ -4,7 +4,7 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     shellAliases = {
       ll = "ls -lah";
       gs = "git status";

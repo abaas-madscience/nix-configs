@@ -1,28 +1,29 @@
 { config, pkgs, ... }:
 {
-  # --- CPU & microcode ---
-  hardware.cpu.amd.updateMicrocode = true;
+  imports = [ ../../hosts/laptop/hardware-configuration.nix ];
 
-  # --- Basic kernel setup ---
+  # --- Bootloader ---
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/vda";  # QEMU/VM disk device
+    useOSProber = true;
+  };
+
+  # --- Kernel ---
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+
+  # --- Nix configuration ---
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # --- Networking ---
+  networking.hostName = "nixos";
+  networking.networkmanager.enable = true;
+
+  # --- CPU & firmware ---
+  hardware.cpu.amd.updateMicrocode = true;
+  hardware.enableRedistributableFirmware = true;
 
   # --- Power management ---
   powerManagement.cpuFreqGovernor = "schedutil";
   services.thermald.enable = true;
-
-  # --- Firmware ---
-  hardware.enableRedistributableFirmware = true;
-
-  # --- Filesystems ---
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/nixos";
-    fsType = "ext4"; # or xfs/btrfs/zfs as you prefer
-  };
-
-  swapDevices = [ ];
-
-  # --- Host networking ---
-  networking.networkmanager.enable = true;
 }

@@ -2,7 +2,7 @@
 
 {
   imports = [
-    /etc/nixos/hardware-configuration.nix
+    ../../modules/system/hardware.nix
     ../../modules/system/graphics.nix
   ];
 
