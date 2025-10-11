@@ -50,7 +50,7 @@
             };
             base_keymap = "VSCode";
             ensure_final_newline_on_save = true;
-            buffer_font_family = "Aporetic Sans Mono";
+            buffer_font_family = "JetBrainsMono Nerd Font";
             buffer_font_features = {
               calt = true;
               ligatures = true;
