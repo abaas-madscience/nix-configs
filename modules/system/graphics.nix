@@ -3,10 +3,6 @@
   # --- AMDGPU driver stack ---
   services.xserver.videoDrivers = [ "amdgpu" ];
 
-  hardware.opengl = {
-    enable = true;
-  };
-
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -39,7 +35,7 @@
   # --- Desktop variables ---
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
-    QT_QPA_PLATFORMTHEME = lib.mkForce "gtk3";
+    QT_QPA_PLATFORMTHEME = lib.mkDefault "adwaita";
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
   };

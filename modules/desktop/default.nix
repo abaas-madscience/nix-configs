@@ -2,26 +2,26 @@
 
 {
   # GNOME + Wayland, minimal app selection
-  services.xserver = {
+  services.xserver.enable = true;
+
+  services.displayManager.gdm = {
     enable = true;
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
-    desktopManager.gnome = {
-      enable = true;
-      extraGSettingsOverridePackages = with pkgs; [
-        adw-gtk3
-        papirus-icon-theme
-      ];
-      extraGSettingsOverrides = ''
-        [org.gnome.desktop.interface]
-        gtk-theme='adw-gtk3-dark'
-        icon-theme='Papirus-Dark'
-        cursor-theme='Bibata-Modern-Classic'
-        font-name='JetBrainsMono Nerd Font 11'
-      '';
-    };
+    wayland = true;
+  };
+
+  services.desktopManager.gnome = {
+    enable = true;
+    extraGSettingsOverridePackages = with pkgs; [
+      gsettings-desktop-schemas
+      adw-gtk3
+    ];
+    extraGSettingsOverrides = ''
+      [org.gnome.desktop.interface]
+      gtk-theme='adw-gtk3-dark'
+      icon-theme='Papirus-Dark'
+      cursor-theme='Bibata-Modern-Classic'
+      font-name='JetBrainsMono Nerd Font 11'
+    '';
   };
 
   # Remove default GNOME apps
@@ -46,6 +46,8 @@
     gnomeExtensions.hot-edge
   ];
 
+  qt.platformTheme.name = lib.mkDefault "adwaita";
+
   # Stylix – unified theming
   stylix = {
     enable = true;
@@ -65,6 +67,11 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 24;
+    };
+    targets = {
+      qt = {
+        platform = lib.mkDefault "qtct";
+      };
     };
   };
 }
