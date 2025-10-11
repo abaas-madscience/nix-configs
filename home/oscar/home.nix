@@ -22,7 +22,7 @@
   };
   # Ensure xresources cursor size is also set
   xresources.properties = {
-    "Xcursor.size" = "24";
+    "Xcursor.size" = 24;
   };
   # Override Stylix cursor size to avoid null coercion
   stylix = {
