@@ -5,7 +5,7 @@
     settings = {
       add_newline = false;
       format = lib.mkForce "$all$directory$git_branch$kubernetes$line_break$character";
-      palette = "catppuccin_mocha";
+      palette = lib.mkForce "catppuccin_mocha";
       right_format = "$time";
       character.success = {
         format = "[➜](bold green) ";
