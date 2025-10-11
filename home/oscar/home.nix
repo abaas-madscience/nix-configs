@@ -24,4 +24,12 @@
   xresources.properties = {
     "Xcursor.size" = "24";
   };
+  # Override Stylix cursor size to avoid null coercion
+  stylix = {
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+      size = 24;
+    };
+  };
 }
