@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
     ./apps/zsh.nix
@@ -53,6 +53,11 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 24;
+    };
+    targets = {
+      qt = {
+        platform = lib.mkForce "qtct";
+      };
     };
   };
 }

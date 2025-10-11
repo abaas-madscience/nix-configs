@@ -57,7 +57,7 @@
     };
     targets = {
       qt = {
-        platform = lib.mkDefault "qtct";
+        platform = lib.mkForce "qtct";
       };
     };
   };
