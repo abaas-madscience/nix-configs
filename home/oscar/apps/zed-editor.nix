@@ -55,7 +55,7 @@
               calt = true;
               ligatures = true;
             };
-            buffer_font_size = 14;
+            buffer_font_size = lib.mkForce 14;
             edit_predictions = {
               disabled_globs = [
                 "**/.env*"
@@ -113,7 +113,7 @@
               VISUAL = "zed --wait";
             };
             ui_font_family = "Aporetic Sans Mono";
-            ui_font_size = 14;
+            ui_font_size = lib.mkForce 14;
             wrap_guides = [
               80
               120
