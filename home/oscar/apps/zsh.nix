@@ -33,7 +33,7 @@
           ) || return
           if [[ -n $selected ]]; then
             BUFFER=$selected
-            CURSOR=${#BUFFER}
+            CURSOR=''${#BUFFER}
           fi
         }
         zle -N history_prefix_fzf_widget
