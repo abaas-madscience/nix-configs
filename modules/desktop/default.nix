@@ -41,7 +41,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.vitals
     gnomeExtensions.appindicator
-    gnomeExtensions.user-theme
+    gnomeExtensions.user-themes
     gnomeExtensions.caffeine
     gnomeExtensions.hot-edge
   ];
