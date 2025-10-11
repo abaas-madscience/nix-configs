@@ -19,7 +19,7 @@
         symbol = lib.mkForce "🌱 ";
       };
       kubernetes = {
-        format = " [$symbol$context(/$namespace)]($style) ";
+        format = lib.mkForce " [$symbol$context(/$namespace)]($style) ";
         symbol = "☸ ";
         disabled = false;
       };
