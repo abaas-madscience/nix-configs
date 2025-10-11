@@ -6,6 +6,7 @@
     starship
     fzf
     zoxide
+    direnv
     bat
     eza
     ripgrep
