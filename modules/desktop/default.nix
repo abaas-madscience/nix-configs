@@ -35,8 +35,6 @@
     gnomeExtensions.hot-edge
   ];
 
-  qt.platformTheme = lib.mkForce "adwaita";
-
   # Stylix – unified theming
   stylix = {
     enable = true;
