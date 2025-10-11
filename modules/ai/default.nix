@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     ollama
     aider-chat
+    shell-gpt
   ];
 
   # Allow user to run ollama service

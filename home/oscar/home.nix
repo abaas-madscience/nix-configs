@@ -6,6 +6,7 @@
     ./apps/zed-editor.nix
     ./apps/starship.nix
     ./apps/firefox.nix
+    ./apps/ai-tools.nix
   ];
 
   home.username = "oscar";
