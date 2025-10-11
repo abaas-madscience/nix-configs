@@ -10,6 +10,8 @@
     ../../modules/ai
   ];
 
+  boot.loader.grub.useOSProber = false;
+
   networking.hostName = "nixos";
   time.timeZone = "Europe/Amsterdam";
 
