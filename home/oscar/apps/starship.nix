@@ -16,7 +16,7 @@
       };
       git_branch = {
         format = " [$symbol$branch]($style) ";
-        symbol = "🌱 ";
+        symbol = lib.mkForce "🌱 ";
       };
       kubernetes = {
         format = " [$symbol$context(/$namespace)]($style) ";
