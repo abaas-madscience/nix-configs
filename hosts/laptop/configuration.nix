@@ -6,6 +6,8 @@
     ../../modules/system/graphics.nix
     ../../modules/desktop
     ../../modules/dev
+    ../../modules/k8s
+    ../../modules/ai
   ];
 
   networking.hostName = "nixos";
