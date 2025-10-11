@@ -23,8 +23,8 @@
 
           shellHook = ''
             export DEV_SHELL_NAME="python"
-            if [ -n "${PS1-}" ]; then
-              printf '\n\033[1;35m🐍 Activated Python dev shell\033[0m (Python ${python.version})\n\n'
+            if [[ $- == *i* ]]; then
+              printf '\n\033[1;35m🐍  Activated Python dev shell\033[0m (Python ${python.version})\n\n'
             fi
           '';
         };

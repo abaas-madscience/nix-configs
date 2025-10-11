@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = lib.mkForce "$all$directory$git_branch$kubernetes$line_break$character";
+      format = lib.mkForce "$env_var$directory$git_branch$kubernetes$line_break$character";
       palette = lib.mkForce "catppuccin_mocha";
       palettes = {
         catppuccin_mocha = {
@@ -37,6 +37,11 @@
         };
       };
       right_format = "$time";
+      env_var = {
+        variable = "DEV_SHELL_NAME";
+        style = "bold mauve";
+        format = "[  $env_value]($style) ";
+      };
       character = {
         success_symbol = "[➜](bold green) ";
       };
