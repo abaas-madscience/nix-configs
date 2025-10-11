@@ -21,6 +21,7 @@
   # Power management
   powerManagement.enable = true;
   services.tlp.enable = true;
+  services.power-profiles-daemon.enable = false;
 
   # Audio stack
   security.rtkit.enable = true;
@@ -32,7 +33,7 @@
   };
 
   # AMD graphics + Vulkan
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
@@ -44,7 +45,7 @@
   virtualisation.docker.enable = true;
   virtualisation.podman = {
     enable = true;
-    dockerCompat = true;
+    dockerCompat = false;
   };
 
   # Fonts
