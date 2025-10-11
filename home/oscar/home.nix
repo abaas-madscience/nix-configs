@@ -20,6 +20,7 @@
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
+    enableZshIntegration = true;
   };
 
   # User-level GNOME Shell extensions

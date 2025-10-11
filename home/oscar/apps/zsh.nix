@@ -13,6 +13,7 @@
     };
     initContent = ''
       export EDITOR=nvim
+      eval "$(direnv hook zsh)"
 
       autoload -Uz up-line-or-history down-line-or-history
       zmodload zsh/terminfo
