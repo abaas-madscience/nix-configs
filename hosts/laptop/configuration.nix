@@ -4,6 +4,8 @@
   imports = [
     ../../modules/system/hardware.nix
     ../../modules/system/graphics.nix
+    ../../modules/desktop
+    ../../modules/dev
   ];
 
   networking.hostName = "nixos";

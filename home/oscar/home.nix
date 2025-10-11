@@ -4,6 +4,8 @@
     ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/zed-editor.nix
+    ./apps/direnv.nix
+    ./apps/starship.nix
   ];
 
   home.username = "oscar";
