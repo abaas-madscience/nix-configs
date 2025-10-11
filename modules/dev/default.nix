@@ -38,7 +38,6 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-  hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable docker/podman
