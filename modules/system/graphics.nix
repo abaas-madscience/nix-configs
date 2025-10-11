@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   # --- AMDGPU driver stack ---
   services.xserver.videoDrivers = [ "amdgpu" ];
@@ -39,7 +39,7 @@
   # --- Desktop variables ---
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
-    QT_QPA_PLATFORMTHEME = "gtk3";
+    QT_QPA_PLATFORMTHEME = lib.mkForce "gtk3";
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
   };
