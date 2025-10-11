@@ -20,4 +20,8 @@
     name = "Bibata-Modern-Classic";
     size = 24;
   };
+  # Ensure xresources cursor size is also set
+  xresources.properties = {
+    "Xcursor.size" = "24";
+  };
 }
