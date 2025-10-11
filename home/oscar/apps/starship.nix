@@ -4,9 +4,9 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = """$all$directory$git_branch$kubernetes$line_break$character""";
+      format = "$all$directory$git_branch$kubernetes$line_break$character";
       palette = "catppuccin_mocha";
-      right_format = """$time""";
+      right_format = "$time";
       character.success = {
         format = "[➜](bold green) ";
       };
