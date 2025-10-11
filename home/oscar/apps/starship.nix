@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   programs.starship = {
     enable = true;
     settings = {
       add_newline = false;
-      format = "$all$directory$git_branch$kubernetes$line_break$character";
+      format = lib.mkForce "$all$directory$git_branch$kubernetes$line_break$character";
       palette = "catppuccin_mocha";
       right_format = "$time";
       character.success = {
