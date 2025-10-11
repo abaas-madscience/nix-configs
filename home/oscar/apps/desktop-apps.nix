@@ -7,7 +7,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    dbeaver
+    dbeaver-bin
   ];
 
   xdg.mimeApps = {
