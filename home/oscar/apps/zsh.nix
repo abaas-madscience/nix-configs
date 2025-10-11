@@ -5,10 +5,7 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
-    historySubstringSearch = {
-      enable = true;
-      caseSensitive = false;
-    };
+    historySubstringSearch.enable = true;
     shellAliases = {
       ll = "ls -lah";
       gs = "git status";
