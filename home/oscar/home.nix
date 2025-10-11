@@ -15,7 +15,7 @@
   programs.home-manager.enable = true;
 
   # Provide a default cursor size to avoid Stylix coercion errors
-  home.pointerCursor = {
+  home.pointerCursor = lib.mkForce {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
     size = 24;
