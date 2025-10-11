@@ -20,7 +20,7 @@
       };
       kubernetes = {
         format = lib.mkForce " [$symbol$context(/$namespace)]($style) ";
-        symbol = "☸ ";
+        symbol = lib.mkForce "☸ ";
         disabled = false;
       };
     };
