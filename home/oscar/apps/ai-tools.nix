@@ -28,10 +28,12 @@ let
     "max-output-tokens" = 4096;
     "openai-api-base" = "http://127.0.0.1:11434/v1";
   };
+
+  tomlFormat = pkgs.formats.toml { };
 in
 {
-  xdg.configFile."shell_gpt/config.toml".text =
-    lib.generators.toTOML { } shellGptConfig;
+  xdg.configFile."shell_gpt/config.toml".source =
+    tomlFormat.generate "shell-gpt-config" shellGptConfig;
 
   home.file.".aider.conf.yml".text =
     lib.generators.toYAML { } aiderConfig;
