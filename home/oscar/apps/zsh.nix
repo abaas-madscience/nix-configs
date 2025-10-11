@@ -20,7 +20,12 @@
       if (( $+commands[fzf] )); then
         history_prefix_fzf_widget() {
           emulate -L zsh
+          setopt localoptions pipefail
           local prefix=$LBUFFER
+          if [[ -z $prefix ]]; then
+            zle up-line-or-history
+            return
+          fi
           local selected
           selected=$(
             fc -rl 1 |
@@ -29,12 +34,11 @@
                 prefix == "" { print; next }
                 index($0, prefix) == 1 { print }
               ' |
-              fzf --tac --no-sort --query "$prefix" --prompt="history> " --height=40% --layout=reverse --border
+              fzf --no-sort --query "$prefix" --prompt="history> " --height=40% --layout=reverse --border
           ) || return
-          if [[ -n $selected ]]; then
-            BUFFER=$selected
-            CURSOR=''${#BUFFER}
-          fi
+          selected=''${selected//\\n/ }
+          BUFFER=$selected
+          CURSOR=''${#BUFFER}
         }
         zle -N history_prefix_fzf_widget
         if [[ -n ''${terminfo[kcuu1]-} ]]; then
