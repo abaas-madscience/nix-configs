@@ -23,8 +23,9 @@
 
           shellHook = ''
             export DEV_SHELL_NAME="python"
-            if [[ $- == *i* ]]; then
-              printf '\n\033[1;35m🐍  Activated Python dev shell\033[0m (Python ${python.version})\n\n'
+            if [[ -z "${_DEV_SHELL_ACTIVATED:-}" ]]; then
+              export _DEV_SHELL_ACTIVATED=1
+              printf '\n\033[1;35m🐍  Activated Python dev shell\033[0m (Python ${python.version})\n\n' >&2
             fi
           '';
         };
