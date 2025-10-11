@@ -7,6 +7,7 @@
     ./apps/starship.nix
     ./apps/firefox.nix
     ./apps/ai-tools.nix
+    ./apps/desktop-apps.nix
   ];
 
   home.username = "oscar";

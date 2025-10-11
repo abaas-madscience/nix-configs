@@ -27,6 +27,8 @@
   environment.systemPackages = with pkgs; [
     adw-gtk3
     papirus-icon-theme
+    loupe
+    evince
     gnomeExtensions.dash-to-dock
     gnomeExtensions.vitals
     gnomeExtensions.appindicator
