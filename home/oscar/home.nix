@@ -5,6 +5,7 @@
     ./apps/tmux.nix
     ./apps/zed-editor.nix
     ./apps/starship.nix
+    ./apps/firefox.nix
   ];
 
   home.username = "oscar";
