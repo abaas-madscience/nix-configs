@@ -9,20 +9,7 @@
     wayland = true;
   };
 
-  services.desktopManager.gnome = {
-    enable = true;
-    extraGSettingsOverridePackages = with pkgs; [
-      gsettings-desktop-schemas
-      adw-gtk3
-    ];
-    extraGSettingsOverrides = ''
-      [org.gnome.desktop.interface]
-      gtk-theme='adw-gtk3-dark'
-      icon-theme='Papirus-Dark'
-      cursor-theme='Bibata-Modern-Classic'
-      font-name='JetBrainsMono Nerd Font 11'
-    '';
-  };
+  services.desktopManager.gnome.enable = true;
 
   # Remove default GNOME apps
   environment.gnome.excludePackages = with pkgs; [
@@ -36,8 +23,10 @@
     epiphany
   ];
 
-  # GNOME extensions
+  # GNOME extensions and themes
   environment.systemPackages = with pkgs; [
+    adw-gtk3
+    papirus-icon-theme
     gnomeExtensions.dash-to-dock
     gnomeExtensions.vitals
     gnomeExtensions.appindicator
@@ -46,7 +35,7 @@
     gnomeExtensions.hot-edge
   ];
 
-  qt.platformTheme = lib.mkDefault "adwaita";
+  qt.platformTheme.name = lib.mkForce "adwaita";
 
   # Stylix – unified theming
   stylix = {
