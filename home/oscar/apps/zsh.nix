@@ -11,7 +11,7 @@
       gs = "git status";
       v = "nvim";
     };
-    initExtra = ''
+    initContent = ''
       export EDITOR=nvim
 
       bindkey '^[[A' history-substring-search-up
