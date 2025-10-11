@@ -46,7 +46,7 @@
     gnomeExtensions.hot-edge
   ];
 
-  qt.platformTheme.name = lib.mkDefault "adwaita";
+  qt.platformTheme = lib.mkDefault "adwaita";
 
   # Stylix – unified theming
   stylix = {
