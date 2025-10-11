@@ -37,24 +37,24 @@
           fi
         }
         zle -N history_prefix_fzf_widget
-        if [[ -n ${terminfo[kcuu1]} ]]; then
-          bindkey "${terminfo[kcuu1]}" history_prefix_fzf_widget
+        if [[ -n ''${terminfo[kcuu1]-} ]]; then
+          bindkey "''${terminfo[kcuu1]}" history_prefix_fzf_widget
         else
           bindkey '^[[A' history_prefix_fzf_widget
         fi
-        if [[ -n ${terminfo[kcud1]} ]]; then
-          bindkey "${terminfo[kcud1]}" history_prefix_fzf_widget
+        if [[ -n ''${terminfo[kcud1]-} ]]; then
+          bindkey "''${terminfo[kcud1]}" history_prefix_fzf_widget
         else
           bindkey '^[[B' history_prefix_fzf_widget
         fi
       else
-        if [[ -n ${terminfo[kcuu1]} ]]; then
-          bindkey "${terminfo[kcuu1]}" history-substring-search-up
+        if [[ -n ''${terminfo[kcuu1]-} ]]; then
+          bindkey "''${terminfo[kcuu1]}" history-substring-search-up
         else
           bindkey '^[[A' history-substring-search-up
         fi
-        if [[ -n ${terminfo[kcud1]} ]]; then
-          bindkey "${terminfo[kcud1]}" history-substring-search-down
+        if [[ -n ''${terminfo[kcud1]-} ]]; then
+          bindkey "''${terminfo[kcud1]}" history-substring-search-down
         else
           bindkey '^[[B' history-substring-search-down
         fi
@@ -62,12 +62,9 @@
     '';
   };
 
-  # Starship configuration
   programs.starship = {
     enable = true;
-    # Configure it declaratively!
     settings = {
-      # Example settings to configure its appearance
       format = "$all";
       directory.truncation_length = 3;
       git_branch.symbol = " ";
@@ -76,9 +73,7 @@
     };
   };
 
-  # Use minimal packages, letting zsh modules handle their dependencies
   home.packages = with pkgs; [
     zsh
-    # Add back the zsh plugins that you want (syntax-highlighting, autosuggestions are now dedicated modules)
   ];
 }
