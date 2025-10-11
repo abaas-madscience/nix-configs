@@ -15,7 +15,7 @@
     kind
   ];
 
-  # Auto-set KUBECONFIG in Zsh
+  # Auto-set KUBECONFIG in zsh
   programs.zsh.shellInit = ''
     export KUBECONFIG="$HOME/.kube/config"
   '';
