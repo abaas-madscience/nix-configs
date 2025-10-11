@@ -6,7 +6,6 @@
   boot.loader.grub = {
     enable = true;
     device = "/dev/vda";  # QEMU/VM disk device
-    useOSProber = true;
   };
 
   # --- Kernel ---
