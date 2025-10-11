@@ -5,13 +5,20 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
+    historySubstringSearch = {
+      enable = true;
+      caseSensitive = false;
+    };
     shellAliases = {
       ll = "ls -lah";
       gs = "git status";
       v = "nvim";
     };
-    initContent = ''
+    initExtra = ''
       export EDITOR=nvim
+
+      bindkey '^[[A' history-substring-search-up
+      bindkey '^[[B' history-substring-search-down
     '';
   };
 
@@ -30,8 +37,8 @@
   };
 
   # Use minimal packages, letting zsh modules handle their dependencies
-  home.packages = with pkgs; [ 
-    zsh 
+  home.packages = with pkgs; [
+    zsh
     # Add back the zsh plugins that you want (syntax-highlighting, autosuggestions are now dedicated modules)
-  ]; 
+  ];
 }
