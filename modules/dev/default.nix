@@ -36,9 +36,6 @@
   hardware.graphics = {
     enable = true;
   };
-  hardware.opengl = {
-    enable = true;
-  };
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   # Enable docker/podman
