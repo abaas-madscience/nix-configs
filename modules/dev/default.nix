@@ -35,6 +35,9 @@
   # AMD graphics + Vulkan
   hardware.graphics = {
     enable = true;
+  };
+  hardware.opengl = {
+    enable = true;
     driSupport = true;
     driSupport32Bit = true;
   };
