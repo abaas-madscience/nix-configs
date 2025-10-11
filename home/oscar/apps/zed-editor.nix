@@ -112,7 +112,7 @@
               EDITOR = "zed --wait";
               VISUAL = "zed --wait";
             };
-            ui_font_family = "Aporetic Sans Mono";
+            ui_font_family = lib.mkForce "Inter";
             ui_font_size = lib.mkForce 14;
             wrap_guides = [
               80
