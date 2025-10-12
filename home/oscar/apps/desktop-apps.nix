@@ -3,11 +3,13 @@
 let
   imageViewerDesktop = "org.gnome.Loupe.desktop";
   pdfViewerDesktop = "org.gnome.Evince.desktop";
+  fileManagerDesktop = "org.gnome.Nautilus.desktop";
   workspaceSettingsDir = ".local/share/DBeaverData/workspace6/General/.metadata/.plugins/org.eclipse.core.runtime/.settings";
 in
 {
   home.packages = with pkgs; [
     dbeaver-bin
+    gnome.nautilus
   ];
 
   xdg.mimeApps = {
@@ -15,6 +17,9 @@ in
     defaultApplications = {
       "application/pdf" = [ pdfViewerDesktop ];
       "application/x-pdf" = [ pdfViewerDesktop ];
+      "inode/directory" = [ fileManagerDesktop ];
+      "x-directory/normal" = [ fileManagerDesktop ];
+      "text/directory" = [ fileManagerDesktop ];
       "image/avif" = [ imageViewerDesktop ];
       "image/bmp" = [ imageViewerDesktop ];
       "image/gif" = [ imageViewerDesktop ];

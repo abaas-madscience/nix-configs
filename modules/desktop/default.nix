@@ -29,6 +29,7 @@
     papirus-icon-theme
     loupe
     evince
+    gnome.nautilus
     gnomeExtensions.dash-to-dock
     gnomeExtensions.vitals
     gnomeExtensions.appindicator
