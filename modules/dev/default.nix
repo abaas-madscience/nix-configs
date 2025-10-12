@@ -17,6 +17,7 @@
     clipman
     kitty
     alacritty
+    just
   ];
 
   # Power management
