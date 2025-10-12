@@ -11,6 +11,13 @@
 
   services.desktopManager.gnome.enable = true;
 
+  # Disable GNOME extension version warnings
+  dconf.settings = {
+    "org/gnome/shell" = {
+      disable-extension-version-validation = true;
+    };
+  };
+
   # Remove default GNOME apps
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
@@ -29,7 +36,7 @@
     papirus-icon-theme
     loupe
     evince
-    gnome.nautilus
+    pkgs.nautilus
     gnomeExtensions.dash-to-dock
     gnomeExtensions.vitals
     gnomeExtensions.appindicator
