@@ -12,6 +12,7 @@
   services.desktopManager.gnome.enable = true;
 
   # Disable GNOME extension version warnings
+  programs.dconf.enable = true;
   dconf.settings = {
     "org/gnome/shell" = {
       disable-extension-version-validation = true;
