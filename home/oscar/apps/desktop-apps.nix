@@ -9,7 +9,7 @@ in
 {
   home.packages = with pkgs; [
     dbeaver-bin
-    gnome.nautilus
+    pkgs.nautilus
   ];
 
   xdg.mimeApps = {
