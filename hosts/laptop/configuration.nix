@@ -10,22 +10,31 @@
     ../../modules/ai
   ];
 
-  boot.loader.grub.useOSProber = false;
+
+  boot.loader = {
+    grub = {
+      enable = true;
+      useOSProber = false;
+      gfxmodeEfi = "1920x1080"; # adjust if needed
+      gfxpayloadEfi = "keep";
+    };
+    systemd-boot.enable = false;
+  };
 
   boot.plymouth = {
     enable = true;
-    theme = lib.mkForce "my-theme";
+    theme = lib.mkForce "unrap";
     themePackages = [
-      (pkgs.runCommand "my-theme" { } ''
-        mkdir -p $out/share/plymouth/themes/my-theme
-        cp -r ${/etc/plymouth/themes/my-theme}/* $out/share/plymouth/themes/my-theme/
+      (pkgs.runCommand "unrap-theme" { } ''
+        mkdir -p $out/share/plymouth/themes/unrap
+        cp -r ${./boot-theme}/* $out/share/plymouth/themes/unrap/
       '')
     ];
   };
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.consoleMode = "auto"; # or "max"
+  boot.kernelParams = [ "quiet" "splash" ];
 
+  # Networking and Timezone
   networking.hostName = "nixos";
   time.timeZone = "Europe/Amsterdam";
 
