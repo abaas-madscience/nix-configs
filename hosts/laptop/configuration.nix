@@ -12,6 +12,20 @@
 
   boot.loader.grub.useOSProber = false;
 
+  boot.plymouth = {
+    enable = true;
+    theme = "my-theme";
+    themePackages = [
+      (pkgs.runCommand "my-theme" { } ''
+        mkdir -p $out/share/plymouth/themes/my-theme
+        cp -r ${/etc/plymouth/themes/my-theme}/* $out/share/plymouth/themes/my-theme/
+      '')
+    ];
+  };
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.consoleMode = "auto"; # or "max"
+
   networking.hostName = "nixos";
   time.timeZone = "Europe/Amsterdam";
 
